@@ -1,0 +1,810 @@
+app:
+  description: ''
+  icon: "\U0001F916"
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: LongTermMemory
+workflow:
+  features:
+    file_upload:
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: template-transform
+      id: 1719906575066-source-1719906601173-target
+      source: '1719906575066'
+      sourceHandle: source
+      target: '1719906601173'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: code
+      id: 1719906601173-source-1719906754157-target
+      source: '1719906601173'
+      sourceHandle: source
+      target: '1719906754157'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1719906754157-source-1719906843290-target
+      source: '1719906754157'
+      sourceHandle: source
+      target: '1719906843290'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1719906843290-source-1719906924365-target
+      source: '1719906843290'
+      sourceHandle: source
+      target: '1719906924365'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: template-transform
+      id: 1719906924365-source-1719907030231-target
+      source: '1719906924365'
+      sourceHandle: source
+      target: '1719907030231'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: parameter-extractor
+      id: 1719907030231-source-1719907179295-target
+      source: '1719907030231'
+      sourceHandle: source
+      target: '1719907179295'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: if-else
+      id: 1719907179295-source-1719907351349-target
+      source: '1719907179295'
+      sourceHandle: source
+      target: '1719907351349'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: template-transform
+      id: 1719907351349-true-1719907410938-target
+      source: '1719907351349'
+      sourceHandle: 'true'
+      target: '1719907410938'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1719907351349-false-1719907452578-target
+      source: '1719907351349'
+      sourceHandle: 'false'
+      target: '1719907452578'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1719907452578-true-1719907482868-target
+      source: '1719907452578'
+      sourceHandle: 'true'
+      target: '1719907482868'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1719907452578-false-1719907683628-target
+      source: '1719907452578'
+      sourceHandle: 'false'
+      target: '1719907683628'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: template-transform
+        targetType: variable-aggregator
+      id: 1719907410938-source-1719907835909-target
+      selected: false
+      source: '1719907410938'
+      sourceHandle: source
+      target: '1719907835909'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: variable-aggregator
+      id: 1719907482868-source-1719907835909-target
+      source: '1719907482868'
+      sourceHandle: source
+      target: '1719907835909'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: variable-aggregator
+      id: 1719907683628-source-1719907835909-target
+      source: '1719907683628'
+      sourceHandle: source
+      target: '1719907835909'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: variable-aggregator
+        targetType: end
+      id: 1719907835909-source-1719906705933-target
+      source: '1719907835909'
+      sourceHandle: source
+      target: '1719906705933'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables:
+        - label: base_url
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: base_url
+        - label: dataset_id
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: dataset_id
+        - label: document_id
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: document_id
+        - label: api_key
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: api_key
+        - label: memory_template
+          max_length: 480
+          options: []
+          required: true
+          type: paragraph
+          variable: memory_template
+        - label: user_input
+          max_length: 2000
+          options: []
+          required: true
+          type: paragraph
+          variable: user_input
+      height: 218
+      id: '1719906575066'
+      position:
+        x: 30
+        y: 309
+      positionAbsolute:
+        x: 30
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: config what kind of content should be remember
+        selected: false
+        template: '<memoryspace user_id="{{ user_id }}">
+
+          {{ memory_template }}
+
+          </memoryspace>'
+        title: Config:MemoryContentTemplate
+        type: template-transform
+        variables:
+        - value_selector:
+          - sys
+          - user_id
+          variable: user_id
+        - value_selector:
+          - '1719906575066'
+          - memory_template
+          variable: memory_template
+      height: 100
+      id: '1719906601173'
+      position:
+        x: 333
+        y: 309
+      positionAbsolute:
+        x: 333
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1719906924365'
+          - longterm_memory_space
+          variable: longterm_memory_space
+        selected: false
+        title: End
+        type: end
+      height: 88
+      id: '1719906705933'
+      position:
+        x: 3363
+        y: 420.5
+      positionAbsolute:
+        x: 3363
+        y: 420.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(base_url: str, dataset_id: str, document_id: str, api_key:\
+          \ str) -> dict:\n    config = {\n        \"base_url\": base_url,\n     \
+          \   \"dataset_id\": dataset_id,\n        \"document_id\": document_id,\n\
+          \        \"api_key\": api_key\n    }\n\n    api_authorization = \"Bearer\
+          \ %s\" % config[\"api_key\"]\n    url_for_search_segment = \"{config[base_url]}/v1/datasets/{config[dataset_id]}/documents/{config[document_id]}/segments\"\
+          .format(config=config)\n    \n    return {\n        \"config\": config,\n\
+          \        \"api_authorization\": api_authorization,\n        \"url_for_search_segment\"\
+          : url_for_search_segment,\n    }\n"
+        code_language: python3
+        desc: Knowledge config for storing long term memory
+        outputs:
+          api_authorization:
+            children: null
+            type: string
+          config:
+            children: null
+            type: object
+          url_for_search_segment:
+            children: null
+            type: string
+        selected: false
+        title: Config:KB
+        type: code
+        variables:
+        - value_selector:
+          - '1719906575066'
+          - base_url
+          variable: base_url
+        - value_selector:
+          - '1719906575066'
+          - dataset_id
+          variable: dataset_id
+        - value_selector:
+          - '1719906575066'
+          - document_id
+          variable: document_id
+        - value_selector:
+          - '1719906575066'
+          - api_key
+          variable: api_key
+      height: 100
+      id: '1719906754157'
+      position:
+        x: 636
+        y: 309
+      positionAbsolute:
+        x: 636
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: ''
+          type: none
+        desc: retrieve memory of user by searching KB by user id
+        headers: Authorization:{{#1719906754157.api_authorization#}}
+        method: get
+        params: keyword:{{#sys.user_id#}}
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Action:retrieve_memory_of_user
+        type: http-request
+        url: '{{#1719906754157.url_for_search_segment#}}'
+        variables: []
+      height: 139
+      id: '1719906843290'
+      position:
+        x: 939
+        y: 309
+      positionAbsolute:
+        x: 939
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(api_response: str, config: object) -> dict:\n\
+          \    url_for_add_segment = \"{config[base_url]}/v1/datasets/{config[dataset_id]}/documents/{config[document_id]}/segments\"\
+          .format(config=config)\n    url_for_update_segment = \"\"\n    longterm_memory_space\
+          \ = \"\"\n    parsed_response = json.loads(api_response)\n    contents =\
+          \ [item['content'] for item in parsed_response['data']]\n    if contents:\n\
+          \        longterm_memory_space = \"\\n\".join(contents)\n        # expose\
+          \ segment_id\n        if len(parsed_response['data']):\n            segment_id\
+          \ = parsed_response['data'][0]['id']\n            longterm_memory_space\
+          \ = \"<segment_id>\" + segment_id + \"</segment_id>\\n\" + longterm_memory_space\n\
+          \            url_for_update_segment = \"{config[base_url]}/v1/datasets/{config[dataset_id]}/documents/{config[document_id]}/segments/{segment_id}\"\
+          .format(config=config, segment_id=segment_id)\n\n    return {\n        \"\
+          longterm_memory_space\": longterm_memory_space,\n        \"url_for_add_segment\"\
+          : url_for_add_segment,\n        \"url_for_update_segment\": url_for_update_segment\n\
+          \    }"
+        code_language: python3
+        desc: extract content field from KB API response
+        outputs:
+          longterm_memory_space:
+            children: null
+            type: string
+          url_for_add_segment:
+            children: null
+            type: string
+          url_for_update_segment:
+            children: null
+            type: string
+        selected: false
+        title: Code:extract_content_from_api
+        type: code
+        variables:
+        - value_selector:
+          - '1719906843290'
+          - body
+          variable: api_response
+        - value_selector:
+          - '1719906754157'
+          - config
+          variable: config
+      height: 100
+      id: '1719906924365'
+      position:
+        x: 1242
+        y: 309
+      positionAbsolute:
+        x: 1242
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: 'prepare agent system prompt
+
+          '
+        selected: false
+        template: "# Long-term Memory Capability\n\nYou possess long-term memory capabilities,\
+          \ maintaining an independent long-term memory space for each user you interact\
+          \ with. Below is an explanation of long-term memory capabilities:\n\nThere\
+          \ is a \"Long-term Memory Content Template\" that declares the attribute\
+          \ tags to be saved. When the user's input content is related to the attribute\
+          \ tags defined in the template, the system analyzes the user's input based\
+          \ on the semantic meaning of the attribute tags in the template, extracts\
+          \ the corresponding attribute tag values, and finally generates the content\
+          \ for the \"Long-term Memory Space\" according to the template format.\n\
+          \n## Long-term Memory Content Template\n\nThe following is the specific\
+          \ long-term memory content template, contained within the `<longterm_memory_template>`\
+          \ tag:\n\n<longterm_memory_template>\n{{ longterm_memory_template }}\n</longterm_memory_template>\n\
+          \n## Long-term Memory Content Template Example\n\nFor example, if the \"\
+          Long-term Memory Content Template\" is set as:\n\n```\n<memoryspace user_id=\"\
+          {{ user_id }}\">\n<UserInfo>\n\t<name>${user_name}</name>\n\t<age>${user_age}</age>\n\
+          \t<hobbies>${user_hobbies}</hobbies>\n</UserInfo>\n</memoryspace>\n```\n\
+          \nThe defined attribute tags in this example are: `<name>`, `<age>`, `<hobbies>`\n\
+          \nExamples of attribute tags corresponding to automatically extracted values\
+          \ are:\n\n- The `<name>` attribute tag identifies name-related information\
+          \ through the word `name`.\n- The `<age>` attribute tag identifies age-related\
+          \ information through the word `age`.\n- The `<hobbies>` attribute tag identifies\
+          \ personal interests and hobbies-related information through the word `hobbies`.\n\
+          \nExamples of extracting attribute tag values:\n\n- For instance, if the\
+          \ user input is `I'm Tom` or `my name is Tom`, the analysis reveals that\
+          \ the user's name is `Tom`, so the value of the `<name>` attribute tag is\
+          \ `Tom`.\n- If the user input is `I'm 30`, the analysis shows that the user's\
+          \ age is `30`, so the value of the `<age>` attribute tag is `30`.\n- If\
+          \ the user input is `I like reading`, the analysis indicates that the user's\
+          \ hobby is `reading`, so the value of the `<hobbies>` attribute tag is `reading`.\n\
+          \nThus, in this example, the final \"Long-term Memory Space\" content generated\
+          \ would be:\n\n```\n<memoryspace user_id=\"{{ user_id }}\">\n<UserInfo>\n\
+          \t<name>Tom</name>\n\t<age>30</age>\n\t<hobbies>reading</hobbies>\n</UserInfo>\n\
+          <memoryspace>\n```\n\n## Long-term Memory Space\n\nThe content of the long-term\
+          \ memory space is contained within the `<longterm_memory_space></longterm_memory_space>`\
+          \ tags:\n\n<longterm_memory_space>\n{{ longterm_memory_space }}\n</longterm_memory_space>\n\
+          \n## Parameter Extraction\n\n### Extracting the `action` Parameter\n\nThe\
+          \ following are the conditions for the `action` parameter values (based\
+          \ on the `Long-term Memory Content Template` and the `Long-term Memory Content\
+          \ Template Example`):\n\n- `add_user_memory`:\n  When the `input_text` mentions\
+          \ information related to the attribute tags defined in the `Long-term Memory\
+          \ Content Template`, and the `<longterm_memory_space></longterm_memory_space>`\
+          \ tags are **empty**.\n- `update_user_memory`:\n  When the `input_text`\
+          \ mentions information related to the attribute tags defined in the `Long-term\
+          \ Memory Content Template`, and the `<longterm_memory_space></longterm_memory_space>`\
+          \ tags are **not empty**.\n- `reply`:\n  When the `input_text` is **unrelated**\
+          \ to the attribute tags defined in the `Long-term Memory Content Template`.\n\
+          \n### Extracting the `longterm_memory_content` Parameter\n\nWhen the `action`\
+          \ parameter value is not `reply`, refer to the examples described in the\
+          \ `Long-term Memory Content Template Example`, use the template defined\
+          \ in the `Long-term Memory Content Template`, analyze the user's input,\
+          \ combine it with the existing information in the \"Long-term Memory Space\"\
+          , extract the values of the attribute tags to generate new \"Long-term Memory\
+          \ Space\" content (ensure the generated content structure is the same as\
+          \ described in the template and is in XML format), and finally convert the\
+          \ long-term memory content into a format suitable for use as a value in\
+          \ JSON key-value pairs (ensure illegal characters are escaped).\n\n"
+        title: Agent prompt
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1719906601173'
+          - output
+          variable: longterm_memory_template
+        - value_selector:
+          - '1719906924365'
+          - longterm_memory_space
+          variable: longterm_memory_space
+        - value_selector:
+          - sys
+          - user_id
+          variable: user_id
+      height: 82
+      id: '1719907030231'
+      position:
+        x: 1545
+        y: 309
+      positionAbsolute:
+        x: 1545
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: use LLM to extract action and longterm_memory_content
+        instruction: '{{#1719907030231.output#}}'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: deepseek
+        parameters:
+        - description: 'action to take, should be one of: add_user_memory,update_user_memory,reply'
+          name: action
+          required: true
+          type: string
+        - description: longterm memory content
+          name: longterm_memory_content
+          required: false
+          type: string
+        query:
+        - '1719906575066'
+        - user_input
+        reasoning_mode: prompt
+        selected: false
+        title: LLM:Parameter Extractor
+        type: parameter-extractor
+        variables: []
+      height: 144
+      id: '1719907179295'
+      position:
+        x: 1848
+        y: 309
+      positionAbsolute:
+        x: 1848
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        conditions:
+        - comparison_operator: is
+          id: '1719907361059'
+          value: reply
+          variable_selector:
+          - '1719907179295'
+          - action
+        desc: ''
+        logical_operator: and
+        selected: false
+        title: IF:action is reply
+        type: if-else
+      height: 124
+      id: '1719907351349'
+      position:
+        x: 2151
+        y: 309
+      positionAbsolute:
+        x: 2151
+        y: 309
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        selected: false
+        template: just answer user query
+        title: Action:reply
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1719907179295'
+          - action
+          variable: action
+      height: 52
+      id: '1719907410938'
+      position:
+        x: 2757
+        y: 309
+      positionAbsolute:
+        x: 2757
+        y: 309
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        conditions:
+        - comparison_operator: is
+          id: '1719907463190'
+          value: add_user_memory
+          variable_selector:
+          - '1719907179295'
+          - action
+        desc: ''
+        logical_operator: and
+        selected: false
+        title: IF:action is add_user_memory
+        type: if-else
+      height: 124
+      id: '1719907452578'
+      position:
+        x: 2454
+        y: 420.5
+      positionAbsolute:
+        x: 2454
+        y: 420.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: '{"segments": [{"content": "{{#1719907179295.longterm_memory_content#}}","keywords":
+            ["{{#sys.user_id#}}"]}]}'
+          type: json
+        desc: ''
+        headers: Authorization:{{#1719906754157.api_authorization#}}
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Action:add_memory
+        type: http-request
+        url: '{{#1719906924365.url_for_add_segment#}}'
+        variables: []
+      height: 91
+      id: '1719907482868'
+      position:
+        x: 2757
+        y: 401
+      positionAbsolute:
+        x: 2757
+        y: 401
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: '{"segment": {"content": "{{#1719907179295.longterm_memory_content#}}",
+            "keywords": ["{{#sys.user_id#}}"]}}'
+          type: json
+        desc: ''
+        headers: Authorization:{{#1719906754157.api_authorization#}}
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Action:update_memory
+        type: http-request
+        url: '{{#1719906924365.url_for_update_segment#}}'
+        variables: []
+      height: 91
+      id: '1719907683628'
+      position:
+        x: 2757
+        y: 532
+      positionAbsolute:
+        x: 2757
+        y: 532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        advanced_settings:
+          group_enabled: true
+          groups:
+          - groupId: 140ac543-c56b-4500-a03d-a8b73903a3a5
+            group_name: action_result
+            output_type: string
+            variables:
+            - - '1719907410938'
+              - output
+            - - '1719907482868'
+              - body
+            - - '1719907683628'
+              - body
+        desc: ''
+        output_type: string
+        selected: false
+        title: Variable Aggregator
+        type: variable-aggregator
+        variables:
+        - - '1719907410938'
+          - output
+      height: 163
+      id: '1719907835909'
+      position:
+        x: 3060
+        y: 420.5
+      positionAbsolute:
+        x: 3060
+        y: 420.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        author: admin
+        desc: ''
+        height: 114
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"important
+          note:","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"MODEL
+          for `","type":"text","version":1},{"detail":0,"format":16,"mode":"normal","style":"","text":"LLM:Parameter
+          Extractor","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          node`,  LLM performance must be >= gpt4","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 251
+      height: 114
+      id: '1719920303831'
+      position:
+        x: 1848
+        y: 480.37757179352536
+      positionAbsolute:
+        x: 1848
+        y: 480.37757179352536
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 251
+    - data:
+        author: admin
+        desc: ''
+        height: 177
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"memory_template
+          example:","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"<UserInfo>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"  <name>${user_name}</name>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"  <age>${user_age}</age>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"  <hobbies>${user_hobbies}</hobbies>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"  <any_user_info>${any_user_info}</any_user_info>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"</UserInfo>","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 303
+      height: 177
+      id: '1719920815505'
+      position:
+        x: 333
+        y: 445.7167598179409
+      positionAbsolute:
+        x: 333
+        y: 445.7167598179409
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 303
+    viewport:
+      x: 143
+      y: 35
+      zoom: 0.7
