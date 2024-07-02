@@ -32,6 +32,8 @@ https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/8c4253ac-9dd7-
 
 config  MODEL for `LLM:Parameter Extractor` node, which LLM performance must be >= gpt4
 
+![LongTermMemory-workflow](screenshots/LongTermMemory-workflow.png)
+
 
 
 ## step 4: publish the workflow as tool "LongTermMemory"
