@@ -6,7 +6,9 @@ a Dify tool for storing and retrieving long-term-memory, using Dify built-in Kno
 
 ## Video
 
-WIP
+https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/8c4253ac-9dd7-44a7-94d7-583388ee69db
+
+
 
 
 
