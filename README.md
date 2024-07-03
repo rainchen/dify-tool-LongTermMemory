@@ -1,10 +1,25 @@
 # About this repo
 
 a Dify tool for storing and retrieving long-term-memory, using Dify built-in Knowledge dataset for storing memories, each user has a standalone long-term-memory space.
+Make chatbot can persistently remember customized information per user.
+
+workflow view:
+
+![LongTermMemory-workflow](screenshots/LongTermMemory-workflow.png)
+
+# How it works
+
+Here is the major logic of this workflow:
+
+1. before each conversation run a "HTTP Request" node named "Action:retrieve_memory_of_user" to request Dify Knowledge API to query user related document segments with filter parameters as `keyword=$current_user_id`
+2. run a "Template" node as "Agent prompt" for preparing agent system prompt, injected customized `$memory_template`
+
+2. run a "Parameter Extractor" node to extract `$action`(value will be one of reply/add_user_memory/update_user_memory ) and `$longterm_memory_content` parameters
+3. if the `$action` is not "reply",  run a "HTTP Request" node to request Dify Knowledge API to create or update the document segment with `$longterm_memory_content` parameter
+4. if the `$action` is "reply", return the retrieved segments as a output variable `$longterm_memory_space`, so that it can be injected as a LLM node's context in a chatbot
 
 
-
-## Video
+# Demo Video
 
 https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/8c4253ac-9dd7-44a7-94d7-583388ee69db
 
@@ -33,9 +48,6 @@ create a new Knowledge and import an empty document
 download [LongTermMemory.yml](https://raw.githubusercontent.com/rainchen/dify-tool-LongTermMemory/main/LongTermMemory.yml)  file and import it using Dify "Import DSL file".
 
 config  MODEL for `LLM:Parameter Extractor` node, which LLM performance must be >= gpt4
-
-![LongTermMemory-workflow](screenshots/LongTermMemory-workflow.png)
-
 
 
 ## step 4: publish the workflow as tool "LongTermMemory"
