@@ -30,6 +30,8 @@ create a new Knowledge and import an empty document
 
 ## step 3:  import the workflow DSL yaml
 
+download [LongTermMemory.yml](https://raw.githubusercontent.com/rainchen/dify-tool-LongTermMemory/main/LongTermMemory.yml)  file and import it using Dify "Import DSL file".
+
 config  MODEL for `LLM:Parameter Extractor` node, which LLM performance must be >= gpt4
 
 ![LongTermMemory-workflow](screenshots/LongTermMemory-workflow.png)
