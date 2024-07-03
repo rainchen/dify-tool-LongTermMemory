@@ -52,17 +52,19 @@ add the "LongTermMemory" tool before LLM node
 
 
 
-## step 7: config parameters for  "LongTermMemory" tool
+## step 7: config parameters for "LongTermMemory" tool
+
+![LongTermMemory-chatbot-demo-config-tool-node-parameters](screenshots/LongTermMemory-chatbot-demo-config-tool-node-parameters.png)
 
 notes for parameters:
 
-- base_url: `http://host.docker.internal` for docker-compose deployment
+- base_url: `http://host.docker.internal` for docker-compose deployment, add the port like `:8082` if not using default nginx port config
 
 - dataset_id: dataset id
 
 - document_id:  document id
 
-- api_key: Dify Knowledge API key)
+- api_key: Dify Knowledge API key
 
 - memory_template: for example
 
