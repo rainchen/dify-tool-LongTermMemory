@@ -12,7 +12,7 @@ workflow view:
 Here is the major logic of this workflow:
 
 1. before each conversation run a "HTTP Request" node named "Action:retrieve_memory_of_user" to request Dify Knowledge API to query user related document segments with filter parameters as `keyword=$current_user_id`
-2. run a "Template" node as "Agent prompt" for preparing agent system prompt, injected customized `$memory_template`
+2. run a "Template" node as "Agent prompt"([agent prompt content](agent-prompt.md)) for preparing agent system prompt, injected customized `$memory_template`
 
 2. run a "Parameter Extractor" node to extract `$action`(value will be one of reply/add_user_memory/update_user_memory ) and `$longterm_memory_content` parameters
 3. if the `$action` is not "reply",  run a "HTTP Request" node to request Dify Knowledge API to create or update the document segment with `$longterm_memory_content` parameter
