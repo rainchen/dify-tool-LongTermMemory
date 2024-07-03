@@ -16,13 +16,13 @@ https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/8c4253ac-9dd7-
 
 ## step 1: create a Knowledge and document for storing long-term-memory
 
-1)create a new Knowledge and import an empty document
+create a new Knowledge and import an empty document
 
 - document name: whatever
 
 - Chunk settings: Automatic
 
-
+- Index mode: Economical
 
 ## step 2: Create a new Secret key for accessing Knowledge API
 
