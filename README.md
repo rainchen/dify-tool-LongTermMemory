@@ -97,7 +97,7 @@ SYSTEM prompt:
 
 ### Scenario 1: test long-term-memory remembering
 
-![LongTermMemory-chatbot-demo-test-long-term-memory remembering](screenshots/LongTermMemory-chatbot-demo-test-long-term-memory remembering.png)
+![LongTermMemory-chatbot-demo-test-long-term-memory remembering](screenshots/LongTermMemory-chatbot-demo-test-long-term-memory-remembering.png)
 
 user input:
 
