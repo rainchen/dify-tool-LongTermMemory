@@ -45,9 +45,10 @@ create a new Knowledge and import an empty document
 
 ## step 3:  import the workflow DSL yaml
 
-download [LongTermMemory.yml](https://raw.githubusercontent.com/rainchen/dify-tool-LongTermMemory/main/LongTermMemory.yml)  file and import it using Dify "Import DSL file".
+1) download [LongTermMemory.yml](https://raw.githubusercontent.com/rainchen/dify-tool-LongTermMemory/main/LongTermMemory.yml) file and import it using Dify "Import DSL file"
 
-config  MODEL for `LLM:Parameter Extractor` node, which LLM performance must be >= gpt4
+2) In the imported workflow, config MODEL for `LLM:Parameter Extractor` node, which LLM performance must be >= gpt4.
+Tips: gpt4 series, deepseek-chat are recommended, gpt3.5-turbo was tested but not powerful enough to run this tool.
 
 
 ## step 4: publish the workflow as tool "LongTermMemory"
@@ -135,6 +136,8 @@ user input:
 
 ![LongTermMemory-chatbot-demo-test-long-term-memory-retrieving](screenshots/LongTermMemory-chatbot-demo-test-long-term-memory-retrieving.png)
 
+Debug and Preview -> Restart (make sure to start a new conversion without chat history)
+
 user input:
 
 - what's my name?
@@ -148,7 +151,7 @@ user input:
 
 ![LongTermMemory-chatbot-demo-test-long-term-memory-standalone-space](screenshots/LongTermMemory-chatbot-demo-test-long-term-memory-standalone-space.png)
 
-Run App
+Run App (You can use different browsers to access and impersonate different users)
 
 user input:
 
