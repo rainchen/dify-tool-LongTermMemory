@@ -21,7 +21,7 @@ Here is the major logic of this workflow:
 
 # Demo Video
 
-https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/8c4253ac-9dd7-44a7-94d7-583388ee69db
+https://github.com/rainchen/dify-tool-LongTermMemory/assets/71397/c9173611-971d-46e3-a819-1d635f56ada5
 
 
 
