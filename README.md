@@ -68,13 +68,13 @@ add the "LongTermMemory" tool before LLM node
 
 notes for parameters:
 
-- base_url: `http://host.docker.internal` for docker-compose deployment, add the port like `:8082` if not using default nginx port config
+- base_url: `http://host.docker.internal` for docker-compose deployment on MacOS(use `http://docker.for.win.localhost` for Windows 10/11), append the port like `:8082` if not using default nginx port config
 
 - dataset_id: dataset id
 
 - document_id:  document id
 
-- api_key: Dify Knowledge API key
+- api_key: Dify Knowledge API key, this is not "Chat App API key". You can get one on 'Knowledge -> API ACCESS' page, a Knowledge API key should be look like "dataset-xxx"
 
 - memory_template: for example
 
